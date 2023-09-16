@@ -24,10 +24,13 @@ const checkWin = () => {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 6],
+    [2, 4, 6],
   ];
   wins.forEach((e) => {
     if (
-        (boxTexts[e[0]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[2]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[0]].innerText !== "")
+      boxTexts[e[0]].innerText === boxTexts[e[1]].innerText &&
+      boxTexts[e[2]].innerText === boxTexts[e[1]].innerText &&
+      boxTexts[e[0]].innerText !== ""
     ) {
       document.querySelector(".info").innerText =
         boxTexts[e[0]].innerText + " " + "Won";
@@ -72,7 +75,7 @@ reset.addEventListener("click", function () {
   document.getElementsByClassName("info")[0].innerText =
     "Turn for" + " " + turn;
 
-    document
-        .querySelector(".imageBox")
-        .getElementsByTagName("img")[0].style.width = "0px";
+  document
+    .querySelector(".imageBox")
+    .getElementsByTagName("img")[0].style.width = "0px";
 });
